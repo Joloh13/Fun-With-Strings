@@ -1,0 +1,99 @@
+public class StringFunctions
+{
+	private static final String s = null;
+
+	//Returns only uppercase letters in the input string
+	public String uppercase(String input)
+	//create empty result String
+	{
+		String result = "";
+		//read the input string from beginning to end
+	    for ( int i = 0; i < input.length(); i++)
+	    {	//compare with uppercase letters
+			char temp = input.charAt(i);
+		
+			if (Character.isUpperCase(temp))
+				{	
+				result += temp + " ";
+				}	
+	    }
+	return result;			
+    }	
+	
+	//Returns every second letter of the string
+	public String secondLetter(String input)
+	//create empty result String
+	{
+		String result = "";
+		//read the input string from beginning to end
+		for (int i=1; i<input.length(); i+=2)
+		//grab every second letter
+			{ 	
+				char j = input.charAt(i);
+				result = result + j + " ";
+			}
+	return result;
+	}
+	
+	//Replaces all vowels in the string with an underscore
+	public String replaceVowels(String input)
+	//create empty result String
+	{
+			String result = input;
+			char replace = '_';
+			//read the input string from beginning to end
+			for (int i =0; i<result.length(); i++)
+			//replace vowels with underscore
+				{ 
+					char j = result.charAt(i);
+				
+						if( isVowel(j))
+						{
+						result = result.replace(j, replace);
+						}
+				}
+				return result;
+	}
+	
+	//Compute the number of vowels in the string
+	public int vowelNumber(String input)
+	//create empty result String
+	{
+		{
+	
+	int counter = 0;
+     String result = input;
+     for( int i = 0; i < input.length(); i++)
+     	{
+    	 char x = result.charAt(i);
+    	 if( isVowel(x)) counter++;
+     	}
+     return counter;
+		}
+	}
+	
+	public boolean isVowel( char j)
+		{
+			if (j=='a' || j=='A' || j=='e' || j=='E' || j=='i' || j=='I' || j=='o' || j=='O' || j=='u' || j=='U')
+				return true;
+			else return false;
+		}
+
+	
+	//Prints positions of vowels in the string
+	public String vowelPositions (String input)
+	//create empty result String
+	{
+		String s = "";
+		for(int i = 0; i<input.length(); i++)
+		{
+			char j = input.charAt(i);
+					if (j=='a' || j=='A' || j=='e' || j=='E' || j=='i' || j=='I' || j=='o' || j=='O' || j=='u' || j=='U')
+						{
+								s += (i+1) +" ,";
+						}
+		}
+		return s;
+	}
+}
+	
